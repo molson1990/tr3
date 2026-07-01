@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Processing</title>
+
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .process-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #212529;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background-color: #0d6efd;
+            border-radius: 4px;
+            animation: loadProgress 3s linear forwards;
+        }
+
+        @keyframes loadProgress {
+            0% { width: 0%; }
+            50% { width: 60%; }
+            100% { width: 100%; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="process-container">
+    <h2>Processing Request</h2>
+    <p>Please wait while your dashboard environment loads...</p>
+
+    <div class="progress-track">
+        <div class="progress-fill"></div>
+    </div>
+</div>
+
+<script>
+    // Redirect after 3 seconds (same duration as animation)
+    setTimeout(function () {
+        window.location.href = "https://www.google.com";
+    }, 3000);
+</script>
+
+</body>
+</html>
